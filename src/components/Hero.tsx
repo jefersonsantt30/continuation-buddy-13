@@ -2,8 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Shield, Lock } from "lucide-react";
 import professionalImage from "@/assets/barbara-hero-real.png";
+import { useState } from "react";
+import PixPayment from "./PixPayment";
 
 export default function Hero() {
+  const [isPixModalOpen, setIsPixModalOpen] = useState(false);
   return (
     <section className="bg-gradient-to-br from-nutrition-light to-nutrition-background py-8 sm:py-12 lg:py-16 px-2 sm:px-3 lg:px-4 relative overflow-hidden min-h-[85vh] sm:min-h-[90vh] flex items-center w-full">
       <div className="absolute inset-0 bg-gradient-to-r from-nutrition-primary/5 to-nutrition-action/5"></div>
@@ -26,10 +29,16 @@ export default function Hero() {
 
               <Button 
                 size="lg" 
+                onClick={() => setIsPixModalOpen(true)}
                 className="w-full bg-nutrition-action hover:bg-nutrition-primary text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl pulse-glow hover-lift min-h-[48px] touch-manipulation"
               >
                 Entrar para o Desafio
               </Button>
+              
+              <PixPayment 
+                isOpen={isPixModalOpen} 
+                onClose={() => setIsPixModalOpen(false)} 
+              />
             </div>
 
             {/* Trust indicators */}

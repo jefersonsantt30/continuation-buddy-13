@@ -1,8 +1,11 @@
 import { CheckCircle, Heart, Scale, Smile } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import PixPayment from "./PixPayment";
 
 export default function Benefits() {
+  const [isPixModalOpen, setIsPixModalOpen] = useState(false);
   const benefits = [
     {
       icon: Scale,
@@ -68,6 +71,7 @@ export default function Benefits() {
         <div className="text-center">
           <Button 
             size="lg" 
+            onClick={() => setIsPixModalOpen(true)}
             className="bg-nutrition-action hover:bg-nutrition-primary text-white px-8 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl font-bold rounded-full shadow-xl hover:shadow-2xl pulse-glow hover-lift animate-pulse"
           >
             Quero Esses Resultados - Garantir Vaga
@@ -75,6 +79,11 @@ export default function Benefits() {
           <p className="text-xs sm:text-sm text-nutrition-text/70 mt-3">
             Últimas 48 horas com desconto especial
           </p>
+          
+          <PixPayment 
+            isOpen={isPixModalOpen} 
+            onClose={() => setIsPixModalOpen(false)} 
+          />
         </div>
       </div>
     </section>

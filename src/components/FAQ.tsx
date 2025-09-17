@@ -5,8 +5,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import PixPayment from "./PixPayment";
 
 export default function FAQ() {
+  const [isPixModalOpen, setIsPixModalOpen] = useState(false);
   const faqs = [
     {
       question: "O plano é personalizado para mim ou é igual para todo mundo?",
@@ -52,6 +55,7 @@ export default function FAQ() {
         <div className="text-center">
           <Button 
             size="lg" 
+            onClick={() => setIsPixModalOpen(true)}
             className="bg-nutrition-action hover:bg-nutrition-primary text-white px-8 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl font-bold rounded-full shadow-xl hover:shadow-2xl pulse-glow hover-lift mb-4"
           >
             Todas as Dúvidas Esclarecidas - Quero Começar!
@@ -59,6 +63,11 @@ export default function FAQ() {
           <p className="text-xs sm:text-sm text-nutrition-text/70">
             Compra 100% segura • Garantia de 7 dias • Acesso imediato
           </p>
+          
+          <PixPayment 
+            isOpen={isPixModalOpen} 
+            onClose={() => setIsPixModalOpen(false)} 
+          />
         </div>
       </div>
     </section>

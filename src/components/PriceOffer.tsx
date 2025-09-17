@@ -26,7 +26,7 @@ export default function PriceOffer() {
             <div className="space-y-2 sm:space-y-3">
               <div className="flex items-center justify-center gap-2">
                 <Star className="w-4 h-4 sm:w-5 sm:h-5 text-nutrition-action fill-current" />
-                <span className="text-sm sm:text-base text-nutrition-text font-medium">Desafio de 26 Dias</span>
+                <span className="text-sm sm:text-base text-nutrition-text font-medium">Desafio de 26 Dias (08/10 até 02/11)</span>
                 <Star className="w-4 h-4 sm:w-5 sm:h-5 text-nutrition-action fill-current" />
               </div>
               

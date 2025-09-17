@@ -32,7 +32,8 @@ export default function HowItWorks() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            Sua Jornada de 26 Dias para a <span className="underline decoration-white/50 decoration-2 sm:decoration-4 underline-offset-4 sm:underline-offset-8">Transformação</span>
+            Sua Jornada de 26 Dias para a <span className="underline decoration-white/50 decoration-2 sm:decoration-4 underline-offset-4 sm:underline-offset-8">Transformação</span><br />
+            <span className="text-lg sm:text-xl lg:text-2xl text-white/80 font-normal">(08/10 até 02/11)</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-white/90 max-w-4xl mx-auto px-2 leading-relaxed">
             É mais fácil do que você imagina. Em apenas 26 dias, você vai construir a base para uma vida mais saudável,

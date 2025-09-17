@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Star } from "lucide-react";
+import { useState } from "react";
+import PixPayment from "./PixPayment";
 
 export default function PriceOffer() {
+  const [isPixModalOpen, setIsPixModalOpen] = useState(false);
   return (
     <section className="bg-nutrition-background py-12 sm:py-16 lg:py-20 px-3 sm:px-4">
       <div className="container mx-auto max-w-4xl">
@@ -59,10 +62,16 @@ export default function PriceOffer() {
 
             <Button 
               size="lg" 
+              onClick={() => setIsPixModalOpen(true)}
               className="bg-nutrition-action hover:bg-nutrition-primary text-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl pulse-glow hover-lift w-full min-h-[48px] touch-manipulation break-words"
             >
               <span className="text-center">Garantir Minha Vaga no Desafio</span>
             </Button>
+
+            <PixPayment 
+              isOpen={isPixModalOpen} 
+              onClose={() => setIsPixModalOpen(false)} 
+            />
 
             <p className="text-xs sm:text-sm text-nutrition-text/70">
               Acesso imediato após a confirmação do pagamento

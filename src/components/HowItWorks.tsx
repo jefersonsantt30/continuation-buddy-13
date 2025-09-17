@@ -1,8 +1,11 @@
 import { Salad, Droplets, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import PixPayment from "./PixPayment";
 
 export default function HowItWorks() {
+  const [isPixModalOpen, setIsPixModalOpen] = useState(false);
   const steps = [
     {
       week: 1,
@@ -75,6 +78,7 @@ export default function HowItWorks() {
         <div className="text-center mt-8 sm:mt-12 lg:mt-16">
           <Button 
             size="lg" 
+            onClick={() => setIsPixModalOpen(true)}
             className="bg-white hover:bg-white/90 text-nutrition-primary px-8 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl font-bold rounded-full shadow-xl hover:shadow-2xl hover-lift border-2 border-white"
           >
             Começar Minha Transformação Agora
@@ -82,6 +86,11 @@ export default function HowItWorks() {
           <p className="text-xs sm:text-sm text-white/80 mt-3">
             Acesso imediato + Garantia de 7 dias
           </p>
+          
+          <PixPayment 
+            isOpen={isPixModalOpen} 
+            onClose={() => setIsPixModalOpen(false)} 
+          />
         </div>
       </div>
     </section>
